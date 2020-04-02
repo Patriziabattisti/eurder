@@ -3,15 +3,15 @@ package com.lonesome.eurder.domain.customers;
 import java.util.UUID;
 
 public class Customer {
-    private UUID id;
+    private final UUID id;
     private String firstName;
     private String lastName;
     private String email;
     private Address address;
     private PhoneNumber phoneNumber;
 
-    public Customer(UUID id, String firstName, String lastName, String email, Address address, PhoneNumber phoneNumber) {
-        this.id = id;
+    public Customer(String firstName, String lastName, String email, Address address, PhoneNumber phoneNumber) {
+        this.id = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
