@@ -14,6 +14,19 @@ public class CustomerDto {
     private Address address;
     private PhoneNumber phoneNumber;
 
+    public CustomerDto(){
+
+    }
+
+    public CustomerDto(CreateCustomerDto createCustomerDto){
+
+        this.firstName=createCustomerDto.getFirstName();
+        this.lastName=createCustomerDto.getLastName();
+        this.address=createCustomerDto.getAddress();
+        this.email=createCustomerDto.getEmail();
+        this.phoneNumber=createCustomerDto.getPhoneNumber();
+    }
+
     public UUID getId() {
         return id;
     }
