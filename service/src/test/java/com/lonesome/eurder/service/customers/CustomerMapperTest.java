@@ -4,8 +4,8 @@ import com.lonesome.eurder.api.dtos.CreateCustomerDto;
 import com.lonesome.eurder.api.dtos.CustomerDto;
 import com.lonesome.eurder.domain.customers.Address;
 import com.lonesome.eurder.domain.customers.Customer;
-import com.lonesome.eurder.domain.customers.CustomerRepository;
 import com.lonesome.eurder.domain.customers.PhoneNumber;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -37,6 +37,13 @@ class CustomerMapperTest {
 
     @Test
     void whenGivenACustomerDto_ReturnCustomer(){
+        customerDto.setId(customer.getId());
+        customerDto.setFirstName("Lola");
+        customerDto.setLastName("something");
+        customerDto.setAddress(customer.getAddress());
+        customerDto.setPhoneNumber(customer.getPhoneNumber());
+        customerDto.setEmail("something@something.com");
+
         assertEquals(Customer.class,customerMapper.fromDtoToCustomer(customerDto).getClass());
         assertEquals(customerDto.getId(),customerMapper.fromDtoToCustomer(customerDto).getId());
     }

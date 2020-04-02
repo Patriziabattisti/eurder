@@ -18,6 +18,14 @@ public class CustomerMapper {
     }
 
     public static Customer fromDtoToCustomer(CustomerDto customerDto){
-        return null;
+
+        Customer customer=new Customer(customerDto.getId(),
+                customerDto.getFirstName(),
+                customerDto.getLastName(),
+                customerDto.getEmail(),
+                customerDto.getAddress(),
+                customerDto.getPhoneNumber());
+
+        return customer;
     }
 }
