@@ -33,6 +33,7 @@ public class CustomerRepository {
     }
 
     public Collection<Customer> getAll() {
+
         return customers.values();
     }
 }
