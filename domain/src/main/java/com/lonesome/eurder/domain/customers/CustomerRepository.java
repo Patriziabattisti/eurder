@@ -1,10 +1,13 @@
 package com.lonesome.eurder.domain.customers;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+@Repository
 public class CustomerRepository {
 
     private Map<UUID, Customer> customers;

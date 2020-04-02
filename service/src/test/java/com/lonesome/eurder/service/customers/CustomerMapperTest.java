@@ -15,12 +15,12 @@ class CustomerMapperTest {
 
     private Customer customer;
     private CustomerDto customerDto;
-    private CreateCustomerDto createCustomerDto;
+;
     private CustomerMapper customerMapper;
 
     @BeforeEach
     void setUp(){
-        createCustomerDto=new CreateCustomerDto();
+        customerMapper=new CustomerMapper();
         Address address = new Address("Rue de La loi", "13B");
         PhoneNumber phoneNumber = new PhoneNumber("032", "1111");
         customer = new Customer("Hello", "World", "hello@world.com", address, phoneNumber);
