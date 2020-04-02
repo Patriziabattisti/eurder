@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
+import java.util.UUID;
+
 
 @RestController
 @RequestMapping(path="/users")
@@ -27,6 +30,18 @@ public class UserController {
         customerService.saveCustomer(customerDto);
 
         return customerDto;
+    }
+
+    @GetMapping(produces = "application/json")
+    @ResponseStatus(HttpStatus.OK)
+    public Collection<CustomerDto> getAllUsers() {
+        return customerService.getAll();
+    }
+
+    @GetMapping(produces = "application/json", path = "/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public CustomerDto getUserById(@PathVariable UUID id) {
+        return customerService.getCustomerById(id);
     }
 
 

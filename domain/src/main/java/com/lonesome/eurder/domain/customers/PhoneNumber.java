@@ -1,5 +1,8 @@
 package com.lonesome.eurder.domain.customers;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
+@JsonAutoDetect
 public class PhoneNumber {
     private String countryPrefix;
     private String actualNumber;
@@ -10,6 +13,7 @@ public class PhoneNumber {
     }
 
     public String getNumber(){
-        return countryPrefix+actualNumber;
+
+        return countryPrefix+" / "+actualNumber;
     }
 }
