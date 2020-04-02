@@ -1,7 +1,7 @@
 package com.lonesome.eurder.service.customers;
 
-import com.lonesome.eurder.api.dtos.CreateCustomerDto;
-import com.lonesome.eurder.api.dtos.CustomerDto;
+import com.lonesome.eurder.infrastructure.dtos.CreateCustomerDto;
+import com.lonesome.eurder.infrastructure.dtos.CustomerDto;
 import com.lonesome.eurder.domain.customers.Address;
 import com.lonesome.eurder.domain.customers.Customer;
 import com.lonesome.eurder.domain.customers.PhoneNumber;
@@ -15,7 +15,7 @@ class CustomerMapperTest {
 
     private Customer customer;
     private CustomerDto customerDto;
-;
+
     private CustomerMapper customerMapper;
 
     @BeforeEach

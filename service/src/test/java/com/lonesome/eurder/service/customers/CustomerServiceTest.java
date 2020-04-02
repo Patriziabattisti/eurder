@@ -1,6 +1,6 @@
 package com.lonesome.eurder.service.customers;
 
-import com.lonesome.eurder.api.dtos.CustomerDto;
+import com.lonesome.eurder.infrastructure.dtos.CustomerDto;
 import com.lonesome.eurder.domain.customers.CustomerRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

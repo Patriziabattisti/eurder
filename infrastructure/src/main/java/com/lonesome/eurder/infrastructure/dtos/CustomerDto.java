@@ -1,7 +1,7 @@
-package com.lonesome.eurder.api.dtos;
+package com.lonesome.eurder.infrastructure.dtos;
 
-import com.lonesome.eurder.domain.customers.Address;
 import com.lonesome.eurder.domain.customers.PhoneNumber;
+import com.lonesome.eurder.domain.customers.Address;
 
 import java.util.Objects;
 import java.util.UUID;
