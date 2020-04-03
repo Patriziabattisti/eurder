@@ -5,6 +5,7 @@ import com.lonesome.eurder.infrastructure.dtos.CustomerDto;
 import com.lonesome.eurder.service.customers.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -32,12 +33,14 @@ public class UserController {
         return customerDto;
     }
 
+    @PreAuthorize("Admin")
     @GetMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public Collection<CustomerDto> getAllUsers() {
         return customerService.getAll();
     }
 
+    @PreAuthorize("Admin")
     @GetMapping(produces = "application/json", path = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public CustomerDto getUserById(@PathVariable UUID id) {

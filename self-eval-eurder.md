@@ -12,30 +12,30 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - What is your focus when working on Örder?
  > ....
  - Do you have a single-module maven project? Or a multi-module maven project?
- > ....
+ > multi-module project, it helps structure and not getting lost
  - Are you working test-first?
- > ....
+ > I try my best to do it but because of it I am really slow
  - Do you have security enabled?
- > ....
+ > yes
  - Do you have logging enabled?
- > ....
+ > nope, not for the moment
  - What happens if the firstname contains numbers? Is this allowed?
  > ....
  - In which currency are the prices?
- > ....
+ > euro but it can be changed
  - Does the phonenumber include the country code?
- > ....
+ > yes
  - Did you go for a similar architecture as digibooky?
- > ....
+ > yes
  - Is your application deployed in the cloud? (Heroku?)
- > ....
+ > no way
  - ....
 ## Progress Story 0 (project setup & technical requirements)
  - [x] Be awesome
- - [ ] Setup Github
- - [ ] Setup Jenkins
- - [ ] Basic setup / skeleton for Spring Boot & Maven
- - [ ] I have my first REST Controller ready
+ - [x] Setup Github
+ - [x] Setup Jenkins
+ - [x] Basic setup / skeleton for Spring Boot & Maven
+ - [x] I have my first REST Controller ready
  - [ ] Swagger is enabled
 ### Comments:
 ## Story 1
