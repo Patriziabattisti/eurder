@@ -39,7 +39,7 @@ Which choices did you make? (List your choices below, remove what is not relevan
  - [ ] Swagger is enabled
 ### Comments:
 ## Story 1
- - [ ] The functional requirements are implemented
+ - [x] The functional requirements are implemented
  - [ ] The requirements are tested with Postman
  - [ ] The requirements are unit tested
  - [ ] The requirements are integration tested

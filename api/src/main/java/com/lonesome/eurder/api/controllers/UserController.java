@@ -33,14 +33,14 @@ public class UserController {
         return customerDto;
     }
 
-    @PreAuthorize("Admin")
+    @PreAuthorize("hasAuthority('Admin')")
     @GetMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public Collection<CustomerDto> getAllUsers() {
         return customerService.getAll();
     }
 
-    @PreAuthorize("Admin")
+    @PreAuthorize("hasAuthority('Admin')")
     @GetMapping(produces = "application/json", path = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public CustomerDto getUserById(@PathVariable UUID id) {
