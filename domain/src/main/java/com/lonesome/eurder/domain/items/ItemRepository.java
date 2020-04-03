@@ -1,10 +1,13 @@
 package com.lonesome.eurder.domain.items;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+@Repository
 public class ItemRepository {
     private Map<UUID,Item> items;
 

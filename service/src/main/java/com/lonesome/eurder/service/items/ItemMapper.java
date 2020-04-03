@@ -2,7 +2,9 @@ package com.lonesome.eurder.service.items;
 
 import com.lonesome.eurder.domain.items.Item;
 import com.lonesome.eurder.infrastructure.dtos.itemsdto.ItemDto;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ItemMapper {
 
     public static ItemDto itemToDto(Item item){
