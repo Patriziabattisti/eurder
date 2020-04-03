@@ -9,12 +9,17 @@ public class Item {
     private Price price;
     private int amount;
 
-    public Item(String name, String description, Price price,int amount) {
-        this.id=UUID.randomUUID();
+    public Item(UUID id, String name, String description, Price price, int amount) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.amount=amount;
+        this.amount = amount;
+    }
+
+    public Item(String name, String description, Price price, int amount) {
+
+        this(UUID.randomUUID(),name,description,price,amount);
     }
 
     public Item setName(String name) {

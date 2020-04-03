@@ -1,7 +1,7 @@
 package com.lonesome.eurder.api.controllers;
 
-import com.lonesome.eurder.infrastructure.dtos.CreateCustomerDto;
-import com.lonesome.eurder.infrastructure.dtos.CustomerDto;
+import com.lonesome.eurder.infrastructure.dtos.customersdto.CreateCustomerDto;
+import com.lonesome.eurder.infrastructure.dtos.customersdto.CustomerDto;
 import com.lonesome.eurder.service.customers.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

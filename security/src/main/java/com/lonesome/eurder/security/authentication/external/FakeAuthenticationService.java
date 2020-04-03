@@ -1,5 +1,6 @@
 package com.lonesome.eurder.security.authentication.external;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,17 +9,27 @@ import static com.google.common.collect.Lists.newArrayList;
 
 @Service
 public class FakeAuthenticationService {
-    private List<ExternalAuthentication> externalAuthentications = newArrayList(
-            ExternalAuthentication.externalAuthentication().withUserName("admin").withPassword("admin").withRoles(newArrayList("Admin")),
-            ExternalAuthentication.externalAuthentication().withUserName("member").withPassword("member").withRoles(newArrayList("Member"))
+
+    private List<ExternalAuthentication> externalAuthentications;
+
+    @Autowired
+    public FakeAuthenticationService(List<ExternalAuthentication> externalAuthentications){
+        this.externalAuthentications=newArrayList();
+        this.externalAuthentications.add(ExternalAuthentication.externalAuthentication().withUserName("admin").withPassword("admin").withRoles(newArrayList("Admin")));
+        this.externalAuthentications.add(ExternalAuthentication.externalAuthentication().withUserName("member").withPassword("member").withRoles(newArrayList("Member")));
+    }
 
 
-    );
 
-    public Optional<ExternalAuthentication> getUser(String userName, String password) {
+    public ExternalAuthentication getUser(String userName, String password) {
         return externalAuthentications.stream()
                 .filter(externalAuthentication -> externalAuthentication.getUserName().equals(userName))
                 .filter(externalAuthentication -> externalAuthentication.getPassword().equals(password))
-                .findFirst();
+                .findFirst()
+                .orElse(null);
+    }
+
+    public void addCustomer(String username, String password){
+        externalAuthentications.add(ExternalAuthentication.externalAuthentication().withUserName(username).withPassword(password));
     }
 }

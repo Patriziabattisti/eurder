@@ -27,11 +27,14 @@ public class CustomerAuthenticationProvider implements AuthenticationProvider {
         String username=authentication.getPrincipal().toString();
         String password=authentication.getCredentials().toString();
 
-        ExternalAuthentication user=fakeAuthenticationService
-                .getUser(username,password)
-                .orElseThrow(()-> new BadCredentialsException("The provided credentials are invalid"));
+        ExternalAuthentication user=fakeAuthenticationService.getUser(username,password);
 
-        return new UsernamePasswordAuthenticationToken(user.getUserName(),user.getPassword(),rolesToGrantedAuthorities(user.getRoles()));
+        if (user==null){
+            throw new BadCredentialsException("Username and password not found.");
+        } else {
+            return new UsernamePasswordAuthenticationToken(user.getUserName(),user.getPassword(),rolesToGrantedAuthorities(user.getRoles()));
+        }
+
     }
     private Collection<? extends GrantedAuthority> rolesToGrantedAuthorities(List<String> roles) {
         return roles.stream()

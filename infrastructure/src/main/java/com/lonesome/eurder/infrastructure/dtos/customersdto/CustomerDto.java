@@ -1,4 +1,4 @@
-package com.lonesome.eurder.infrastructure.dtos;
+package com.lonesome.eurder.infrastructure.dtos.customersdto;
 
 import com.lonesome.eurder.domain.customers.PhoneNumber;
 import com.lonesome.eurder.domain.customers.Address;
