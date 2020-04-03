@@ -17,6 +17,11 @@
             <artifactId>api</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.lonesome</groupId>
+            <artifactId>security</artifactId>
+        </dependency>
+
     </dependencies>
 
 
