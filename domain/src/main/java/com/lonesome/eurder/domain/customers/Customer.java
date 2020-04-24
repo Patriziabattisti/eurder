@@ -67,4 +67,6 @@ public class Customer {
     public int hashCode() {
         return Objects.hash(id, firstName, lastName, email, address, phoneNumber);
     }
+
+
 }

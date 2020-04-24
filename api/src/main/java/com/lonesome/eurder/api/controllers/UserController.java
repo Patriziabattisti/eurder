@@ -1,6 +1,5 @@
 package com.lonesome.eurder.api.controllers;
 
-import com.lonesome.eurder.infrastructure.dtos.customersdto.CreateCustomerDto;
 import com.lonesome.eurder.infrastructure.dtos.customersdto.CustomerDto;
 import com.lonesome.eurder.service.customers.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +24,9 @@ public class UserController {
 
     @PostMapping(consumes = "application/json", produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public CustomerDto createUser(@RequestBody CreateCustomerDto createCustomerDto) {
+    public CustomerDto createUser(@RequestBody CustomerDto.CreateCustomerDto createCustomerDto) {
 
-        CustomerDto customerDto =new CustomerDto(createCustomerDto) ;
+        CustomerDto customerDto = new CustomerDto(createCustomerDto);
         customerService.saveCustomer(customerDto);
 
         return customerDto;

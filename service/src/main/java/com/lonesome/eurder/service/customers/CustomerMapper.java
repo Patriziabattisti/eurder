@@ -21,7 +21,7 @@ public class CustomerMapper {
 
     public Customer fromDtoToCustomer(CustomerDto customerDto){
 
-        if(customerDto.getId()!=null){
+        //if(customerDto.getId()!=null){
 
             return new Customer(customerDto.getId(),
                     customerDto.getFirstName(),
@@ -29,13 +29,13 @@ public class CustomerMapper {
                     customerDto.getEmail(),
                     customerDto.getAddress(),
                     customerDto.getPhoneNumber());
-        }
+        /*}
 
         return new Customer(
                 customerDto.getFirstName(),
                 customerDto.getLastName(),
                 customerDto.getEmail(),
                 customerDto.getAddress(),
-                customerDto.getPhoneNumber());
+                customerDto.getPhoneNumber());*/
     }
 }

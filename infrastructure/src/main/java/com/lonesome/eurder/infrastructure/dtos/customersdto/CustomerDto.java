@@ -18,13 +18,13 @@ public class CustomerDto {
 
     }
 
-    public CustomerDto(CreateCustomerDto createCustomerDto){
-
-        this.firstName=createCustomerDto.getFirstName();
-        this.lastName=createCustomerDto.getLastName();
-        this.address=createCustomerDto.getAddress();
-        this.email=createCustomerDto.getEmail();
-        this.phoneNumber=createCustomerDto.getPhoneNumber();
+    public CustomerDto(CustomerDtoBuilder customerDtoBuilder){
+        this.id=customerDtoBuilder.getId();
+        this.firstName=customerDtoBuilder.getFirstName();
+        this.lastName=customerDtoBuilder.getLastName();
+        this.address=customerDtoBuilder.getAddress();
+        this.email=customerDtoBuilder.getEmail();
+        this.phoneNumber=customerDtoBuilder.getPhoneNumber();
     }
 
     public UUID getId() {
@@ -100,14 +100,88 @@ public class CustomerDto {
         CustomerDto that = (CustomerDto) o;
         return Objects.equals(id, that.id) &&
                 Objects.equals(firstName, that.firstName) &&
-                Objects.equals(lastName, that.lastName) &&
-                Objects.equals(email, that.email) &&
-                Objects.equals(address, that.address) &&
-                Objects.equals(phoneNumber, that.phoneNumber);
+                Objects.equals(lastName, that.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, email, address, phoneNumber);
+        return Objects.hash(id, firstName, lastName);
     }
+
+    public static class CustomerDtoBuilder{
+        private UUID id;
+        private String firstName;
+        private String lastName;
+        private String email;
+        private Address address;
+        private PhoneNumber phoneNumber;
+
+        protected CustomerDtoBuilder(){
+
+        }
+        public static CustomerDtoBuilder customerDtoBuilder(){
+            return new CustomerDtoBuilder();
+        }
+
+        public CustomerDto build(){
+            return new CustomerDto(this);
+        }
+
+        public CustomerDtoBuilder withId(UUID id){
+            this.id=id;
+            return this;
+        }
+
+        public CustomerDtoBuilder withFirstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+
+        public CustomerDtoBuilder withLastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
+
+        public CustomerDtoBuilder withEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public CustomerDtoBuilder withAddress(Address address) {
+            this.address = address;
+            return this;
+        }
+
+        public CustomerDtoBuilder withPhoneNumber(PhoneNumber phoneNumber) {
+            this.phoneNumber = phoneNumber;
+            return this;
+        }
+
+        public UUID getId() {
+            return id;
+        }
+
+        public String getFirstName() {
+            return firstName;
+        }
+
+        public String getLastName() {
+            return lastName;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public Address getAddress() {
+            return address;
+        }
+
+        public PhoneNumber getPhoneNumber() {
+            return phoneNumber;
+        }
+    }
+
+
+
 }
