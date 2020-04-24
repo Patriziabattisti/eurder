@@ -21,9 +21,12 @@ public class Customer {
     @Column(name="email")
     private String email;
 
-    @Transient
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address", referencedColumnName = "address_id")
     private Address address;
-    @Transient
+
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="phone_number",referencedColumnName = "phone_id")
     private PhoneNumber phoneNumber;
 
     public Customer(){}
