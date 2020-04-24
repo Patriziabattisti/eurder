@@ -24,9 +24,9 @@ public class UserController {
 
     @PostMapping(consumes = "application/json", produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public CustomerDto createUser(@RequestBody CustomerDto.CreateCustomerDto createCustomerDto) {
+    public CustomerDto createUser(@RequestBody CustomerDto.CustomerDtoBuilder customerDtoBuilder) {
 
-        CustomerDto customerDto = new CustomerDto(createCustomerDto);
+        CustomerDto customerDto = new CustomerDto(customerDtoBuilder);
         customerService.saveCustomer(customerDto);
 
         return customerDto;

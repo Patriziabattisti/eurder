@@ -18,7 +18,7 @@ class CustomerRepositoryTest {
         customerRepository = new CustomerRepository();
         Address address = new Address("Rue de La loi", "13B");
         PhoneNumber phoneNumber = new PhoneNumber("032", "1111");
-        customer = new Customer("Hello", "World", "hello@world.com", address, phoneNumber);
+        customer = new Customer(null,"Hello", "World", "hello@world.com", address, phoneNumber);
     }
 
     @Test
@@ -41,7 +41,7 @@ class CustomerRepositoryTest {
     void whenAskedForAllCustomer_ReturnListOfCustomers(){
         Address address2 = new Address("Rue de La ligne", "13B");
         PhoneNumber phoneNumber2 = new PhoneNumber("032", "1111");
-        Customer customer2 = new Customer("Hello", "World", "hello@world.com", address2, phoneNumber2);
+        Customer customer2 = new Customer(null,"Hello", "World", "hello@world.com", address2, phoneNumber2);
 
         customerRepository.saveCustomer(customer);
         customerRepository.saveCustomer(customer2);

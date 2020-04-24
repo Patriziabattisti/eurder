@@ -22,7 +22,7 @@ class CustomerMapperTest {
         customerMapper=new CustomerMapper();
         Address address = new Address("Rue de La loi", "13B");
         PhoneNumber phoneNumber = new PhoneNumber("032", "1111");
-        customer = new Customer("Hello", "World", "hello@world.com", address, phoneNumber);
+        customer = new Customer(null,"Hello", "World", "hello@world.com", address, phoneNumber);
         customerDto=new CustomerDto();
     }
 

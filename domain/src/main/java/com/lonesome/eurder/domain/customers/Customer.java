@@ -12,7 +12,7 @@ public class Customer {
     private PhoneNumber phoneNumber;
 
     public Customer(UUID id,String firstName, String lastName, String email, Address address, PhoneNumber phoneNumber) {
-        this.id = id;
+        this.id = Objects.requireNonNullElseGet(id, UUID::randomUUID);
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -20,10 +20,6 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public Customer(String firstName, String lastName, String email, Address address, PhoneNumber phoneNumber) {
-
-        this(UUID.randomUUID(),firstName,lastName,email,address,phoneNumber);
-    }
 
 
     public UUID getId() {
