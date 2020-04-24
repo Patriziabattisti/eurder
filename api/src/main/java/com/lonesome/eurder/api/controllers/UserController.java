@@ -13,9 +13,9 @@ import java.util.UUID;
 
 
 @RestController
-@RequestMapping(path="/users")
+@RequestMapping(path=UserController.USERS_RESOURCE_PATH)
 public class UserController {
-
+    public static final String USERS_RESOURCE_PATH = "/users";
     private CustomerService customerService;
 
     @Autowired

@@ -2,7 +2,7 @@ package com.lonesome.eurder.infrastructure.dtos.itemsdto;
 
 import com.lonesome.eurder.domain.items.Price;
 
-public class CreateItemDto {
+public class ItemDtoBuilder {
     private String name;
     private String description;
     private Price price;
@@ -12,7 +12,7 @@ public class CreateItemDto {
         return name;
     }
 
-    public CreateItemDto setName(String name) {
+    public ItemDtoBuilder setName(String name) {
         this.name = name;
         return this;
     }
@@ -21,7 +21,7 @@ public class CreateItemDto {
         return description;
     }
 
-    public CreateItemDto setDescription(String description) {
+    public ItemDtoBuilder setDescription(String description) {
         this.description = description;
         return this;
     }
@@ -30,7 +30,7 @@ public class CreateItemDto {
         return price;
     }
 
-    public CreateItemDto setPrice(Price price) {
+    public ItemDtoBuilder setPrice(Price price) {
         this.price = price;
         return this;
     }
@@ -39,7 +39,7 @@ public class CreateItemDto {
         return amount;
     }
 
-    public CreateItemDto setAmount(int amount) {
+    public ItemDtoBuilder setAmount(int amount) {
         this.amount = amount;
         return this;
     }

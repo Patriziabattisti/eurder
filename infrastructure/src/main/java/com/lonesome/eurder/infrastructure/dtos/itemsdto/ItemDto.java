@@ -15,11 +15,11 @@ public class ItemDto {
 
     }
 
-    public ItemDto(CreateItemDto createItemDto) {
-        this.name = createItemDto.getName();
-        this.description = createItemDto.getDescription();
-        this.price = createItemDto.getPrice();
-        this.amount = createItemDto.getAmount();
+    public ItemDto(ItemDtoBuilder itemDtoBuilder) {
+        this.name = itemDtoBuilder.getName();
+        this.description = itemDtoBuilder.getDescription();
+        this.price = itemDtoBuilder.getPrice();
+        this.amount = itemDtoBuilder.getAmount();
     }
 
     public UUID getId() {
