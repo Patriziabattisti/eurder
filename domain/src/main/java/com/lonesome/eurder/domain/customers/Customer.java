@@ -1,18 +1,35 @@
 package com.lonesome.eurder.domain.customers;
 
+import javax.persistence.*;
 import java.util.Objects;
 import java.util.UUID;
 
+@Entity
+@Table(name = "customer")
 public class Customer {
-    private final UUID id;
+    @Id
+    @GeneratedValue
+    @Column(name="customer_id")
+    private  UUID id;
+
+    @Column (name="first_name")
     private String firstName;
+
+    @Column (name="last_name")
     private String lastName;
+
+    @Transient
     private String email;
+    @Transient
     private Address address;
+    @Transient
     private PhoneNumber phoneNumber;
 
+    public Customer(){}
+
     public Customer(UUID id,String firstName, String lastName, String email, Address address, PhoneNumber phoneNumber) {
-        this.id = Objects.requireNonNullElseGet(id, UUID::randomUUID);
+        //this.id = Objects.requireNonNullElseGet(id, UUID::randomUUID);
+        this.id=id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

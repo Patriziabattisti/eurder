@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 
 class CustomerServiceTest {
-    private CustomerRepository customerRepository;
+  /*  private CustomerRepository customerRepository;
     private CustomerMapper customerMapper;
     CustomerService customerService;
 
@@ -54,6 +54,6 @@ class CustomerServiceTest {
 
         Assertions.assertThat(customerService.getAll()).containsExactlyInAnyOrder(customerDto,customerDto2);
 
-    }
+    }*/
 
 }

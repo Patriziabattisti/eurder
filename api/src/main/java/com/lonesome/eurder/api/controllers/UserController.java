@@ -2,6 +2,8 @@ package com.lonesome.eurder.api.controllers;
 
 import com.lonesome.eurder.infrastructure.dtos.customersdto.CustomerDto;
 import com.lonesome.eurder.service.customers.CustomerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -16,6 +18,7 @@ import java.util.UUID;
 public class UserController {
     public static final String USERS_RESOURCE_PATH = "/users";
     private CustomerService customerService;
+    private final Logger myLogger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     public UserController(CustomerService customerService) {
@@ -28,11 +31,11 @@ public class UserController {
 
         CustomerDto customerDto = new CustomerDto(customerDtoBuilder);
         customerService.saveCustomer(customerDto);
-
+        myLogger.info("someone saved a customer");
         return customerDto;
     }
 
-    @PreAuthorize("hasAuthority('Admin')")
+    /*@PreAuthorize("hasAuthority('Admin')")
     @GetMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
     public Collection<CustomerDto> getAllUsers() {
@@ -44,7 +47,7 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     public CustomerDto getUserById(@PathVariable UUID id) {
         return customerService.getCustomerById(id);
-    }
+    }*/
 
 
 }
