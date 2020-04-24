@@ -18,8 +18,9 @@ public class Customer {
     @Column (name="last_name")
     private String lastName;
 
-    @Transient
+    @Column(name="email")
     private String email;
+
     @Transient
     private Address address;
     @Transient
@@ -28,7 +29,7 @@ public class Customer {
     public Customer(){}
 
     public Customer(UUID id,String firstName, String lastName, String email, Address address, PhoneNumber phoneNumber) {
-        //this.id = Objects.requireNonNullElseGet(id, UUID::randomUUID);
+
         this.id=id;
         this.firstName = firstName;
         this.lastName = lastName;
