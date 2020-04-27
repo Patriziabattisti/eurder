@@ -1,13 +1,32 @@
 package com.lonesome.eurder.domain.items;
 
+import javax.persistence.*;
 import java.util.UUID;
 
+
+@Entity
+@Table(name="item")
 public class Item {
-    private final UUID id;
+    @Id
+    @GeneratedValue
+    @Column(name="item_id")
+    private  UUID id;
+
+    @Column(name="item_name")
     private String name;
+
+    @Column(name="item_description")
     private String description;
+
+    @Transient
     private Price price;
+
+    @Column(name="item_amount")
     private int amount;
+
+    public Item(){
+
+    }
 
     public Item(UUID id, String name, String description, Price price, int amount) {
         this.id = id;
@@ -17,10 +36,6 @@ public class Item {
         this.amount = amount;
     }
 
-    public Item(String name, String description, Price price, int amount) {
-
-        this(UUID.randomUUID(),name,description,price,amount);
-    }
 
     public Item setName(String name) {
         this.name = name;

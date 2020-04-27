@@ -16,6 +16,7 @@ public class ItemDto {
     }
 
     public ItemDto(ItemDtoBuilder itemDtoBuilder) {
+        this.id=itemDtoBuilder.getId();
         this.name = itemDtoBuilder.getName();
         this.description = itemDtoBuilder.getDescription();
         this.price = itemDtoBuilder.getPrice();
@@ -65,5 +66,67 @@ public class ItemDto {
     public ItemDto setAmount(int amount) {
         this.amount = amount;
         return this;
+    }
+
+    public static class ItemDtoBuilder{
+        private UUID id;
+        private String name;
+        private String description;
+        private Price price;
+        private int amount;
+
+        protected ItemDtoBuilder(){}
+
+        public static ItemDtoBuilder itemDtoBuilder(){
+            return new ItemDtoBuilder();
+        }
+        public ItemDto build() {
+            return new ItemDto(this);
+        }
+
+        public ItemDtoBuilder withId(UUID id) {
+            this.id = id;
+            return this;
+        }
+
+        public ItemDtoBuilder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public ItemDtoBuilder withDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public ItemDtoBuilder withPrice(Price price) {
+            this.price = price;
+            return this;
+        }
+
+        public ItemDtoBuilder withAmount(int amount) {
+            this.amount = amount;
+            return this;
+        }
+
+        public UUID getId() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public Price getPrice() {
+            return price;
+        }
+
+        public int getAmount() {
+            return amount;
+        }
     }
 }
