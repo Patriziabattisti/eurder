@@ -1,5 +1,6 @@
 package com.lonesome.eurder.security;
 
+import com.lonesome.eurder.api.controllers.ItemController;
 import com.lonesome.eurder.api.controllers.UserController;
 import com.lonesome.eurder.security.authentication.external.CustomerAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.sessionManagement().sessionCreationPolicy(STATELESS);
         http.csrf().disable().authorizeRequests()
                 .antMatchers(UserController.USERS_RESOURCE_PATH + "/**").permitAll()
+                .antMatchers(ItemController.ITEMS_RESOURCE_PATH + "/**").permitAll()
                 .anyRequest().authenticated()
                 .and().httpBasic()
                 .authenticationEntryPoint(authenticationEntryPoint)
